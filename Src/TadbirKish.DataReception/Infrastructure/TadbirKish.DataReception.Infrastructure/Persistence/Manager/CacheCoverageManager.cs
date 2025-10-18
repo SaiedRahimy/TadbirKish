@@ -57,7 +57,6 @@ namespace TadbirKish.DataReception.Infrastructure.Persistence.Manager
         {
             try
             {
-                var s = await _context.Coverages.ToListAsync();
                 var coverages = await _context.Coverages.Select(c => new CoverageInfoDto
                 {
                     Id = c.Id,
