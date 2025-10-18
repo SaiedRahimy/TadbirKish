@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  identityservice:
+    container_name: data_reception
+    build:
+      context: .
+      dockerfile: TadbirKish.DataReception/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+      - ASPNETCORE_URLS=https://+:5003
+    volumes:
+      - ~/.aspnet/https:/root/.aspnet/https:ro
